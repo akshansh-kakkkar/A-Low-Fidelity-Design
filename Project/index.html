@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Laundry Service - Prototype</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <main class="app">
+        <header class="app-header">
+            <button class="back hidden" id="backBtn">←</button>
+            <h1 class="title">LAUNDRY SERVICE</h1>
+            <div class="avatar"></div>
+        </header>
+
+        <!-- Home / Hero -->
+        <section class="screen" id="home">
+            <div class="hero-figure"></div>
+            <div class="controls">
+                <button class="btn primary" data-screen="signup">SIGNUP</button>
+                <button class="btn" data-screen="login">LOGIN</button>
+            </div>
+            <a class="link small" id="guestLink">don't want to login? CLICK HERE</a>
+        </section>
+
+        <!-- Signup -->
+        <section class="screen hidden" id="signup">
+            <h2>ENTER YOUR CREDENTIALS TO SIGN UP :</h2>
+            <form id="signupForm" class="form">
+                <label>Enter Your Name:
+                    <input name="name" required placeholder="John Doe">
+                </label>
+                <label>Enter Your Email:
+                    <input name="email" type="email" required placeholder="johndoe@gmail.com">
+                </label>
+                <label>Enter Your Password:
+                    <input name="password" type="password" required placeholder="••••••••">
+                </label>
+                <button class="btn primary" type="submit">SIGN UP</button>
+                <p class="small">already have an account? <a id="toLogin">LOGIN</a></p>
+            </form>
+        </section>
+
+        <!-- Login -->
+        <section class="screen hidden" id="login">
+            <h2>ENTER YOUR CREDENTIALS TO LOGIN :</h2>
+            <form id="loginForm" class="form">
+                <label>Enter Your Email:
+                    <input name="email" type="email" required placeholder="johndoe@gmail.com">
+                </label>
+                <label>Enter Your Password:
+                    <input name="password" type="password" required placeholder="••••••">
+                </label>
+                <button class="btn primary" type="submit">LOGIN</button>
+                <p class="small">dont have an account? <a id="toSignup">SIGNUP</a></p>
+            </form>
+        </section>
+
+        <!-- User Dashboard (simple) -->
+        <section class="screen hidden" id="user">
+            <h2>USER</h2>
+            <div class="card big">STATS</div>
+            <div class="menu">
+                <button class="menu-item">ORDERS</button>
+                <button class="menu-item">RETURNS</button>
+                <button class="menu-item">REFUNDS</button>
+                <button class="menu-item">COMPLAINTS</button>
+            </div>
+            <button class="btn wide" id="userBook">BOOK NOW</button>
+        </section>
+
+        <!-- Vendor Dashboard (simple) -->
+        <section class="screen hidden" id="vendor">
+            <h2>VENDOR</h2>
+            <div class="card big">STATS</div>
+            <div class="menu">
+                <button class="menu-item">ORDERS</button>
+                <button class="menu-item">DELIVERED</button>
+                <button class="menu-item">COMPLAINTS</button>
+                <button class="menu-item">PAYOUTS</button>
+            </div>
+            <button class="btn wide">CHAT SUPPORT</button>
+        </section>
+
+        <!-- Search / Browse -->
+        <section class="screen hidden" id="browse">
+            <div class="searchRow">
+                <input placeholder="SEARCH...">
+                <button class="btn">🔍</button>
+            </div>
+            <div class="card mid image">Image</div>
+            <div class="list">
+                <div class="list-item">Service A</div>
+                <div class="list-item">Service B</div>
+                <div class="list-item">Service C</div>
+            </div>
+        </section>
+
+        <!-- Checkout / Payment -->
+        <section class="screen hidden" id="checkout">
+            <h2>SELECT A PAYMENT OPTION TO CONTINUE:</h2>
+            <form id="checkoutForm" class="form">
+                <label>Card Holder:
+                    <input name="holder" placeholder="lorem ipsum">
+                </label>
+                <label>Card Number:
+                    <input name="card" placeholder="xxxx-xxxx-xxxx-xxxx">
+                </label>
+                <label>Expiry:
+                    <input name="exp" placeholder="MM/YY">
+                </label>
+                <label>CVV:
+                    <input name="cvv" placeholder="123">
+                </label>
+                <button class="btn primary" id="payBtn">BOOK NOW</button>
+            </form>
+        </section>
+
+        <!-- Order Received -->
+        <section class="screen hidden" id="order">
+            <h2>ORDER RECEIVED</h2>
+            <div class="card large image">Order Image</div>
+            <div class="rating">
+                <p>RATE US</p>
+                <div class="stars" id="stars">
+                    <button data-value="1">☆</button>
+                    <button data-value="2">☆</button>
+                    <button data-value="3">☆</button>
+                    <button data-value="4">☆</button>
+                    <button data-value="5">☆</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
